@@ -1,0 +1,27 @@
+Rapor değişiklik ---
+
+rapor inceleme ---
+
+rapor silme ---
+
+rapor tanımlama ---
+
+hasta adı-soyad arama---
+
+laborant ad-soyad arama---
+
+hasta Tc arama ---
+
+laborant ekleme ---
+
+parola giriş---
+
+admin yetkilendirme---
+
+uyarı ve hataları düzenleme---
+
+jwt Authenticate ?
+
+birim test---
+
+ide bağımsız çalışma---

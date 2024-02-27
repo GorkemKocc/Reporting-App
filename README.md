@@ -85,8 +85,9 @@ Cloud veritabanı olarak **Neon Tech**'ten yararlanıldı. Neon Tech, bulut taba
 
 #### **Soft Delete**
 Veritabanında soft delete işlemi uygulanmaktadır. Silinen veriler fiziksel olarak silinmez, ancak bir "isActive" alanının değeri değiştirilerek pasif hale getirilir. Bu sayede, silinen veriler daha sonra geri yüklenebilir veya kullanılabilir hale getirilebilir.
+
 #### **Pageable**
-Büyük veri kümeleri için performansı artırmak için Pageable tercih edilmiştir. Pageable, veritabanı sorgularında sayfa numaralandırması ve sıralama işlemlerini yönetmek için kullanılır ve büyük veri kümeleriyle daha etkili çalışır.
+Büyük veri kümeleri için performansı artırmak için Pageable kullanılmaktadır. Pageable, veritabanı sorgularında sayfa numaralandırması ve sıralama işlemlerini yönetmek için kullanılır ve büyük veri kümeleriyle daha etkili çalışır.
 
 ## Maven  
 Maven, bağımlılıkları yönetmek ve proje yapılandırmasını kolaylaştırmak için kullanıldı. Maven, proje bağımlılıklarını ve yapılandırmasını XML tabanlı bir dosyada tanımlayarak proje yönetimini kolaylaştırır.
@@ -176,6 +177,9 @@ Neon Tech was used as a cloud database. Neon Tech is a provider of cloud-based d
 
 #### **Soft Delete**
 A soft delete operation is applied in the database. Deleted data is not physically deleted, but made inactive by changing the value of an "isActive" field. This way, deleted data can be restored or made available later.
+
+#### **Pageable**
+Pageable is used to improve performance for large datasets. Pageable is used to manage pagination and sorting in database queries and works more effectively with large datasets.
 
 ## Maven
 Maven was used to manage dependencies and simplify project configuration. Maven simplifies project management by defining project dependencies and configuration in an XML-based file.

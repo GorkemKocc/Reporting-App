@@ -1,6 +1,5 @@
 package GorkemKoc.reportingApplication.business.concretes;
 
-
 import GorkemKoc.reportingApplication.business.abstracts.ReportService;
 import GorkemKoc.reportingApplication.business.reponses.*;
 import GorkemKoc.reportingApplication.business.requests.CreateReportRequest;
@@ -16,12 +15,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 @AllArgsConstructor
 @Service

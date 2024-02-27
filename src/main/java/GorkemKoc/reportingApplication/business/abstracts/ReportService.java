@@ -4,10 +4,9 @@ import GorkemKoc.reportingApplication.business.reponses.*;
 import GorkemKoc.reportingApplication.business.requests.CreateReportRequest;
 import GorkemKoc.reportingApplication.business.requests.UpdateReportRequest;
 import org.springframework.data.domain.Page;
-
 public interface ReportService {
-    public int getTotalPages(int pageSize);
-    public boolean doesReportExist(String fileNumber);
+    int getTotalPages(int pageSize);
+    boolean doesReportExist(String fileNumber);
     Page<GetAllReportResponse> getAll(int page, int size);
     Page<GetAllActiveReportResponse> getAllActiveReports(int page, int size);
     GetByReportIdResponse getByReportId(int reportId);

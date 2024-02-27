@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-import { BrowserRouter as Router, Routes, Route, useParams, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Login from './pages/login/Login.jsx';
 import Dashboard from './layouts/Dashboard';
 import LaborantRegistration from './pages/LaborantRegistration';

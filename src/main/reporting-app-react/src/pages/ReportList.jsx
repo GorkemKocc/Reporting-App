@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Icon, Menu, Table, Pagination, Loader } from 'semantic-ui-react';
+import { Icon, Menu, Table, Pagination, Loader, Modal } from 'semantic-ui-react';
 import ReportService from '../services/reportService';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setReports, setLoading, setActivePage, setPageSize, setAscendingOrder, setTotalPages } from '../store/features/reportList/reportsSlice';
+import { setReports, setLoading, setActivePage, setAscendingOrder, setTotalPages } from '../store/features/reportList/reportsSlice';
 
 export default function ReportList() {
     const reportService = new ReportService();
@@ -18,6 +18,9 @@ export default function ReportList() {
 
     const dispatch = useDispatch();
     const { laborantId } = useParams();
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         if (!isSearched) {
@@ -48,6 +51,11 @@ export default function ReportList() {
 
         const [year, month, day] = inputDate.split('-');
         return `${day}-${month}-${year}`;
+    };
+
+    const handleImageClick = (imageBase64) => {
+        setSelectedImage(imageBase64);
+        setModalOpen(true);
     };
 
     return (
@@ -92,16 +100,16 @@ export default function ReportList() {
                                 <Table.Cell>{report.diagnosisDetails}</Table.Cell>
                                 <Table.Cell>{formatDate(report.reportDate)}</Table.Cell>
                                 <Table.Cell>
-                                    <a href={`data:image/png;base64,${report.reportPictureBase64}`} target="_blank" rel="noopener noreferrer">
-                                        <img src={`data:image/png;base64,${report.reportPictureBase64}`} style={{ maxWidth: '100px', height: 'auto' }} />
+                                    <a href={`#`} onClick={() => handleImageClick(report.reportPictureBase64)}>
+                                        <img src={`data:image/png;base64,${report.reportPictureBase64}`} style={{ maxWidth: '100px', height: 'auto' }} alt="Report" />
                                     </a>
                                 </Table.Cell>
                                 <Table.Cell>{report.laborantFirstName} {report.laborantLastName}</Table.Cell>
                             </Table.Row>
+
                         ))
                     )}
                 </Table.Body>
-
                 <Table.Footer>
                     <Table.Row>
                         <Table.HeaderCell colSpan='9'>
@@ -116,6 +124,9 @@ export default function ReportList() {
                     </Table.Row>
                 </Table.Footer>
             </Table>
+            <Modal open={modalOpen} onClose={() => setModalOpen(false)} center>
+                <img src={`data:image/png;base64,${selectedImage}`} alt="Report" style={{ maxHeight: '80vh', maxWidth: '80vw' }} />
+            </Modal>
         </div>
     );
 }

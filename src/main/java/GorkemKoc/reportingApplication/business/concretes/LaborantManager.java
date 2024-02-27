@@ -7,10 +7,8 @@ import GorkemKoc.reportingApplication.business.requests.UpdateLaborantRequest;
 import GorkemKoc.reportingApplication.core.utilities.mappers.ModelMapperService;
 import GorkemKoc.reportingApplication.dataAccess.abstracts.LaborantRepository;
 import GorkemKoc.reportingApplication.entities.concretes.Laborant;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

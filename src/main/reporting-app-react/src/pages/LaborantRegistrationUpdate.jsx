@@ -3,7 +3,6 @@ import { Checkbox, Label, Message, Button } from 'semantic-ui-react';
 import * as Yup from 'yup';
 import './LaborantRegistration.css'
 import LaborantService from '../services/laborantService';
-import { useNavigate } from 'react-router-dom';
 
 export default function LaborantRegistration() {
 
@@ -30,8 +29,6 @@ export default function LaborantRegistration() {
     const [error, setError] = useState(null);
 
     const [buttonState, setButtonState] = useState(null);
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         const loggedInClient = localStorage.getItem('loggedInClient');
